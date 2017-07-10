@@ -3,10 +3,10 @@ raise('Java version needs to be >= 8') if node['java']['jdk_version'].to_i < 8
 
 if platform_family?('rhel', 'amazon')
   repository_file = "graylog-#{version}-repository_latest.rpm"
-  repository_url = "https://packages.graylog2.org/repo/packages/#{repository_file}"
+  repository_url = "http://packages.graylog2.org/repo/packages/#{repository_file}"
 elsif platform_family?('debian')
   repository_file = "graylog-#{version}-repository_latest.deb"
-  repository_url = "https://packages.graylog2.org/repo/packages/#{repository_file}"
+  repository_url = "http://packages.graylog2.org/repo/packages/#{repository_file}"
   package 'apt-transport-https'
 end
 
